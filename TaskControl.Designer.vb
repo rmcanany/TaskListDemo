@@ -77,7 +77,7 @@ Partial Class TaskControl
         Me.LB_Image.AutoSize = True
         Me.LB_Image.BackColor = System.Drawing.Color.Transparent
         Me.LB_Image.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LB_Image.Image = Global.TaskListDemo.My.Resources.Resources.Drill_16
+        Me.LB_Image.Image = Global.TaskListDemo.My.Resources.Resources.skull_16
         Me.LB_Image.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.LB_Image.Location = New System.Drawing.Point(4, 1)
         Me.LB_Image.Name = "LB_Image"

@@ -1,4 +1,6 @@
-﻿Public Class TaskControl
+﻿Imports System.Windows.Forms.VisualStyles
+
+Public Class TaskControl
 
     Public Task_Name As String = ""
     Public Image_Name As String = ""
@@ -18,6 +20,8 @@
     Public Option_2_Name As String = ""
 
     Public Sub Initialize()
+
+        'TLP.BorderStyle = BorderStyle.FixedSingle
 
         CB_Enabled.Checked = Task_Enabled
         CB_Assembly.Enabled = asm
