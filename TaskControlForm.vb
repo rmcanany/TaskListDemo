@@ -8,24 +8,20 @@
 
         For Each tmpTask As cTask In TaskList
 
-            Dim tmpTC = New TaskControl
-
-            tmpTC.Task_Name = tmpTask.Task_Name
-            tmpTC.Image_Name = tmpTask.Image_Name
-
-            tmpTC.Task_Enabled = tmpTask.Task_Enabled
-            tmpTC.asm = tmpTask.asm
-            tmpTC.par = tmpTask.par
-            tmpTC.psm = tmpTask.psm
-            tmpTC.dft = tmpTask.dft
-
-            tmpTC.HelpText = tmpTask.HelpText
-
-            tmpTC.Option_1 = tmpTask.Option_1
-            tmpTC.Option_2 = tmpTask.Option_2
-
-            tmpTC.Option_1_Name = tmpTask.Option_1_Name
-            tmpTC.Option_2_Name = tmpTask.Option_2_Name
+            Dim tmpTC = New TaskControl With {
+                .Task_Name = tmpTask.Task_Name,
+                .Image_Name = tmpTask.Image_Name,
+                .Task_Enabled = tmpTask.Task_Enabled,
+                .asm = tmpTask.asm,
+                .par = tmpTask.par,
+                .psm = tmpTask.psm,
+                .dft = tmpTask.dft,
+                .HelpText = tmpTask.HelpText,
+                .Option_1 = tmpTask.Option_1,
+                .Option_2 = tmpTask.Option_2,
+                .Option_1_Name = tmpTask.Option_1_Name,
+                .Option_2_Name = tmpTask.Option_2_Name
+            }
 
             tmpTC.Initialize()
 
@@ -62,103 +58,88 @@
 
         TaskList = New List(Of cTask)
 
-        Dim tmpTask As New cTask
-        tmpTask.Task_Name = "Open\Save"
-        tmpTask.Image_Name = "Save_16"
-
-        tmpTask.Task_Enabled = True
-        tmpTask.asm = True
-        tmpTask.par = True
-        tmpTask.psm = True
-        tmpTask.dft = True
-
-        tmpTask.HelpText = "Open and saves the file"
-
-        tmpTask.Option_1 = False
-        tmpTask.Option_2 = False
-
-        tmpTask.Option_1_Name = ""
-        tmpTask.Option_2_Name = ""
+        Dim tmpTask As New cTask With {
+            .Task_Name = "Open\Save",
+            .Image_Name = "Save_16",
+            .Task_Enabled = True,
+            .asm = True,
+            .par = True,
+            .psm = True,
+            .dft = True,
+            .HelpText = "Open and saves the file",
+            .Option_1 = False,
+            .Option_2 = False,
+            .Option_1_Name = "",
+            .Option_2_Name = ""
+        }
 
         TaskList.Add(tmpTask)
 
-        tmpTask = New cTask
-        tmpTask.Task_Name = "Activate and update all"
-        tmpTask.Image_Name = "Update_16"
-
-        tmpTask.Task_Enabled = True
-        tmpTask.asm = True
-        tmpTask.par = False
-        tmpTask.psm = False
-        tmpTask.dft = False
-
-        tmpTask.HelpText = "Activate and update all"
-
-        tmpTask.Option_1 = False
-        tmpTask.Option_2 = False
-
-        tmpTask.Option_1_Name = ""
-        tmpTask.Option_2_Name = ""
+        tmpTask = New cTask With {
+            .Task_Name = "Activate and update all",
+            .Image_Name = "Update_16",
+            .Task_Enabled = True,
+            .asm = True,
+            .par = False,
+            .psm = False,
+            .dft = False,
+            .HelpText = "Activate and update all",
+            .Option_1 = False,
+            .Option_2 = False,
+            .Option_1_Name = "",
+            .Option_2_Name = ""
+        }
 
         TaskList.Add(tmpTask)
 
-        tmpTask = New cTask
-        tmpTask.Task_Name = "Property find\replace"
-        tmpTask.Image_Name = "Synchronize_16"
-
-        tmpTask.Task_Enabled = True
-        tmpTask.asm = True
-        tmpTask.par = True
-        tmpTask.psm = True
-        tmpTask.dft = False
-
-        tmpTask.HelpText = "Property find\replace"
-
-        tmpTask.Option_1 = False
-        tmpTask.Option_2 = False
-
-        tmpTask.Option_1_Name = ""
-        tmpTask.Option_2_Name = ""
+        tmpTask = New cTask With {
+            .Task_Name = "Property find\replace",
+            .Image_Name = "Synchronize_16",
+            .Task_Enabled = True,
+            .asm = True,
+            .par = True,
+            .psm = True,
+            .dft = False,
+            .HelpText = "Property find\replace",
+            .Option_1 = False,
+            .Option_2 = False,
+            .Option_1_Name = "",
+            .Option_2_Name = ""
+        }
 
         TaskList.Add(tmpTask)
 
-        tmpTask = New cTask
-        tmpTask.Task_Name = "Update physical properties"
-        tmpTask.Image_Name = "skull_16"
-
-        tmpTask.Task_Enabled = True
-        tmpTask.asm = True
-        tmpTask.par = True
-        tmpTask.psm = True
-        tmpTask.dft = False
-
-        tmpTask.HelpText = "Update physical properties"
-
-        tmpTask.Option_1 = True
-        tmpTask.Option_2 = True
-
-        tmpTask.Option_1_Name = "Show center of mass"
-        tmpTask.Option_2_Name = "Hide center of mass"
+        tmpTask = New cTask With {
+            .Task_Name = "Update physical properties",
+            .Image_Name = "skull_16",
+            .Task_Enabled = True,
+            .asm = True,
+            .par = True,
+            .psm = True,
+            .dft = False,
+            .HelpText = "Update physical properties",
+            .Option_1 = True,
+            .Option_2 = True,
+            .Option_1_Name = "Show center of mass",
+            .Option_2_Name = "Hide center of mass"
+        }
 
         TaskList.Add(tmpTask)
 
-        tmpTask = New cTask
-        tmpTask.Task_Name = "Variable add\edit\expose"
-        tmpTask.Image_Name = "Drill_16"
-
-        tmpTask.Task_Enabled = True
-        tmpTask.asm = True
-        tmpTask.par = True
-        tmpTask.psm = True
-        tmpTask.dft = False
-
-        tmpTask.HelpText = "Variable add\edit\expose"
-
-        tmpTask.Option_1 = False
-        tmpTask.Option_2 = False
-
-        tmpTask.Option_1_Name = ""
-        tmpTask.Option_2_Name = ""
+        tmpTask = New cTask With {
+            .Task_Name = "Variable add\edit\expose",
+            .Image_Name = "Drill_16",
+            .Task_Enabled = True,
+            .asm = True,
+            .par = True,
+            .psm = True,
+            .dft = False,
+            .HelpText = "Variable add\edit\expose",
+            .Option_1 = False,
+            .Option_2 = False,
+            .Option_1_Name = "",
+            .Option_2_Name = ""
+        }
 
         TaskList.Add(tmpTask)
 
