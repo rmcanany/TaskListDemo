@@ -47,6 +47,12 @@
         TaskList = New List(Of cTask)
 
         Dim tmpTask As New cTask With {
+            .title = True
+        }
+
+        TaskList.Add(tmpTask)
+
+        tmpTask = New cTask With {
             .Task_Name = "Open\Save",
             .Image_Name = "Save_16",
             .Task_Enabled = True,
