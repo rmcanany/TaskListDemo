@@ -8,8 +8,6 @@ Public Class TaskControl
 
         If Not Task.Title Then
 
-            'TLP.BorderStyle = BorderStyle.FixedSingle
-
             L1.Visible = False
             L2.Visible = False
             L3.Visible = False
@@ -24,9 +22,6 @@ Public Class TaskControl
 
             LB_Name.Text = Task.Task_Name
             LB_Image.Image = ImageList1.Images.Item(Task.Image_Name)
-
-            'CB_Option_1.Enabled = Task.Option_1
-            'CB_Option_2.Enabled = Task.Option_2
 
             If Not Task.Option_2 Then
                 TLP.RowStyles.Item(5).Height = 0
@@ -78,6 +73,17 @@ Public Class TaskControl
 
     End Sub
 
+    Public Sub VerticalBorders(Visible As Boolean)
+
+        Lc1.Visible = Visible
+        Lc3.Visible = Visible
+        Lc5.Visible = Visible
+        Lc7.Visible = Visible
+        Lc9.Visible = Visible
+        Lc11.Visible = Visible
+        Lc13.Visible = Visible
+
+    End Sub
 
 End Class
 

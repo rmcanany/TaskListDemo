@@ -33,7 +33,7 @@ Partial Class TaskControlForm
         Me.FLP.Location = New System.Drawing.Point(0, 0)
         Me.FLP.Margin = New System.Windows.Forms.Padding(0)
         Me.FLP.Name = "FLP"
-        Me.FLP.Size = New System.Drawing.Size(484, 461)
+        Me.FLP.Size = New System.Drawing.Size(753, 461)
         Me.FLP.TabIndex = 0
         Me.FLP.WrapContents = False
         '
@@ -41,7 +41,7 @@ Partial Class TaskControlForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(484, 461)
+        Me.ClientSize = New System.Drawing.Size(753, 461)
         Me.Controls.Add(Me.FLP)
         Me.Name = "TaskControlForm"
         Me.Text = "Form1"

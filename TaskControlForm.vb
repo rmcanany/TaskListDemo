@@ -1,6 +1,7 @@
 ﻿Public Class TaskControlForm
 
     Dim TaskList As List(Of cTask)
+    Dim VerticalBorders As Boolean = False
 
     Private Sub TaskControlForm_Load(sender As Object, e As EventArgs) Handles Me.Load
 
@@ -12,7 +13,7 @@
             tmpTC.Task = tmpTask
 
             tmpTC.Initialize()
-            tmpTC.Width = FLP.Width - 2
+            tmpTC.VerticalBorders(VerticalBorders)
 
             'AddHandler tmpTC.UserClick, AddressOf Me.tmpTC_Click
 
@@ -30,13 +31,17 @@
                 If i = 0 Then
                     ' Its the first control, all subsequent controls follow
                     ' the anchor behavior of this control.
-                    'c.Anchor = AnchorStyles.Left + AnchorStyles.Top
-                    'c.Width = FLP_Richieste.Width - 10
+
+                    c.Width = FLP.Width - 2
+                    c.Anchor = AnchorStyles.Left + AnchorStyles.Top
+
                     'If FLP_Richieste.VerticalScroll.Visible Then c.Width += -SystemInformation.VerticalScrollBarWidth
                 Else
+
                     ' It is not the first control. Set its anchor to
                     ' copy the width of the first control in the list.
                     c.Anchor = AnchorStyles.Left + AnchorStyles.Right
+
                 End If
             Next
         End If
@@ -142,6 +147,19 @@
         }
 
         TaskList.Add(tmpTask)
+
+    End Sub
+
+    Private Sub FLP_SizeChanged(sender As Object, e As EventArgs) Handles FLP.SizeChanged
+
+        For i = 0 To FLP.Controls.Count - 1
+            Dim c As Control = FLP.Controls(i)
+            If i = 0 Then
+
+                c.Width = FLP.Width - 2
+
+            End If
+        Next
 
     End Sub
 
