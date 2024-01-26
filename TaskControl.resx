@@ -118,6 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="BT_Configure.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAZ5JREFUOE9j
+        GDxgw/6j+zbsPdqyf/9+DqgQHCTWdfsn1HZfB+LtubmT2KHCqGDDvmN9G/Yd/b9+39FeqBAYJNR0qQI1
+        /gLiW1EV7YIgsYaGBhawJDJYtX8/z/r9xyYDDfm3fu+xAqgwQ3xdrzNQ838gfpvQ0CWRVt7Bn1DbtQsq
+        jQk27D+SAjTk74Z9R+pA/LiGbj2oASD8Aaj5LpC+BVaMC2zcdyxpw77Df38uFXz3bJ7EVyQDQPhnXF13
+        IFQpbvBzCd+b/zMZ/v/bwv6/tS/rWkJDu0J8bY9xSkOnDFQJbpBQ26f7cI7sr39b2P7/P8j+//dBga//
+        D3OaQ6Xxg8TabnOgM9+CnNvam3P370HezyBD/h3k/vX/IFsUVBl2AArx+NruzxC/dt1NauiU+n+Y1fjf
+        Qa7vIEPA+ADb4v/7GXigWhAgrq7TEaG5+zko/qFSDP8PccTADYDgtVApBABqug50fg6Qfg8KA6gwHABt
+        no8wgPM1VBgBgBo3JdR0X4yv7rGDCqGA/zsZuIGaD/4/yPH5/yG2EKjwgAMGBgB+8+WZAEHVagAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
   <data name="BT_Help.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAWxJREFUOE+1
@@ -138,7 +151,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAA0
-        CwAAAk1TRnQBSQFMAgEBBQEAARgBAAEYAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CwAAAk1TRnQBSQFMAgEBBQEAATABAAEwAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAASADAAEBAQABCAYAAQgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA

@@ -8,24 +8,12 @@
 
         For Each tmpTask As cTask In TaskList
 
-            Dim tmpTC = New TaskControl With {
-                .Task_Name = tmpTask.Task_Name,
-                .Image_Name = tmpTask.Image_Name,
-                .Task_Enabled = tmpTask.Task_Enabled,
-                .asm = tmpTask.asm,
-                .par = tmpTask.par,
-                .psm = tmpTask.psm,
-                .dft = tmpTask.dft,
-                .HelpText = tmpTask.HelpText,
-                .Option_1 = tmpTask.Option_1,
-                .Option_2 = tmpTask.Option_2,
-                .Option_1_Name = tmpTask.Option_1_Name,
-                .Option_2_Name = tmpTask.Option_2_Name
-            }
+            Dim tmpTC = New TaskControl
+            tmpTC.Task = tmpTask
 
             tmpTC.Initialize()
-
             tmpTC.Width = FLP.Width - 2
+
             'AddHandler tmpTC.UserClick, AddressOf Me.tmpTC_Click
 
             FLP.Controls.Add(tmpTC)
@@ -66,11 +54,33 @@
             .par = True,
             .psm = True,
             .dft = True,
-            .HelpText = "Open and saves the file",
-            .Option_1 = False,
-            .Option_2 = False,
-            .Option_1_Name = "",
-            .Option_2_Name = ""
+            .HelpText = "Open and saves the file"
+        }
+
+        TaskList.Add(tmpTask)
+
+        tmpTask = New cTask With {
+            .Task_Name = "Save as",
+            .Image_Name = "Update_16",
+            .Task_Enabled = True,
+            .dft = True,
+            .HelpText = "Save as",
+            .Combo = True,
+            .ComboValue = New List(Of String)(New String() {".dxf", ".dwg", ".pdf"})
+        }
+
+        TaskList.Add(tmpTask)
+
+        tmpTask = New cTask With {
+            .Task_Name = "Save as",
+            .Image_Name = "Update_16",
+            .Task_Enabled = True,
+            .asm = True,
+            .par = True,
+            .psm = True,
+            .HelpText = "Save as",
+            .Combo = True,
+            .ComboValue = New List(Of String)(New String() {".x_t", ".stp", ".igs", ".stl", ".ifc"})
         }
 
         TaskList.Add(tmpTask)
@@ -80,14 +90,7 @@
             .Image_Name = "Update_16",
             .Task_Enabled = True,
             .asm = True,
-            .par = False,
-            .psm = False,
-            .dft = False,
-            .HelpText = "Activate and update all",
-            .Option_1 = False,
-            .Option_2 = False,
-            .Option_1_Name = "",
-            .Option_2_Name = ""
+            .HelpText = "Activate and update all"
         }
 
         TaskList.Add(tmpTask)
@@ -99,12 +102,7 @@
             .asm = True,
             .par = True,
             .psm = True,
-            .dft = False,
-            .HelpText = "Property find\replace",
-            .Option_1 = False,
-            .Option_2 = False,
-            .Option_1_Name = "",
-            .Option_2_Name = ""
+            .HelpText = "Property find\replace"
         }
 
         TaskList.Add(tmpTask)
@@ -116,7 +114,6 @@
             .asm = True,
             .par = True,
             .psm = True,
-            .dft = False,
             .HelpText = "Update physical properties",
             .Option_1 = True,
             .Option_2 = True,
@@ -133,12 +130,9 @@
             .asm = True,
             .par = True,
             .psm = True,
-            .dft = False,
             .HelpText = "Variable add\edit\expose",
-            .Option_1 = False,
-            .Option_2 = False,
-            .Option_1_Name = "",
-            .Option_2_Name = ""
+            .Configurable = True,
+            .Configuration = "example configuration text"
         }
 
         TaskList.Add(tmpTask)
@@ -147,23 +141,4 @@
 
 End Class
 
-Public Class cTask
 
-    Public Task_Name As String = ""
-    Public Image_Name As String = ""
-
-    Public Task_Enabled As Boolean = True
-    Public asm As Boolean = False
-    Public par As Boolean = False
-    Public psm As Boolean = False
-    Public dft As Boolean = False
-
-    Public HelpText As String = ""
-
-    Public Option_1 As Boolean = False
-    Public Option_2 As Boolean = False
-
-    Public Option_1_Name As String = ""
-    Public Option_2_Name As String = ""
-
-End Class
