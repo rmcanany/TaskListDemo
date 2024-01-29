@@ -1,7 +1,7 @@
 ﻿Public Class TaskControlForm
 
     Dim TaskList As List(Of cTask)
-    Dim VerticalBorders As Boolean = False
+    Dim VerticalBorders As Boolean = True
 
     Private Sub TaskControlForm_Load(sender As Object, e As EventArgs) Handles Me.Load
 
@@ -51,101 +51,28 @@
 
         TaskList = New List(Of cTask)
 
-        Dim tmpTask As New cTask With {
-            .title = True
-        }
-
+        Dim tmpTask As New cTask("Title")
         TaskList.Add(tmpTask)
 
-        tmpTask = New cTask With {
-            .Task_Name = "Open\Save",
-            .Image_Name = "Save_16",
-            .Task_Enabled = True,
-            .asm = True,
-            .par = True,
-            .psm = True,
-            .dft = True,
-            .HelpText = "Open and saves the file"
-        }
-
+        tmpTask = New cTask("Open\Save")
         TaskList.Add(tmpTask)
 
-        tmpTask = New cTask With {
-            .Task_Name = "Save as",
-            .Image_Name = "Update_16",
-            .Task_Enabled = True,
-            .dft = True,
-            .HelpText = "Save as",
-            .Combo = True,
-            .ComboValue = New List(Of String)(New String() {".dxf", ".dwg", ".pdf"})
-        }
-
+        tmpTask = New cTask("Save as 2D")
         TaskList.Add(tmpTask)
 
-        tmpTask = New cTask With {
-            .Task_Name = "Save as",
-            .Image_Name = "Update_16",
-            .Task_Enabled = True,
-            .asm = True,
-            .par = True,
-            .psm = True,
-            .HelpText = "Save as",
-            .Combo = True,
-            .ComboValue = New List(Of String)(New String() {".x_t", ".stp", ".igs", ".stl", ".ifc"})
-        }
-
+        tmpTask = New cTask("Save as 3D")
         TaskList.Add(tmpTask)
 
-        tmpTask = New cTask With {
-            .Task_Name = "Activate and update all",
-            .Image_Name = "Update_16",
-            .Task_Enabled = True,
-            .asm = True,
-            .HelpText = "Activate and update all"
-        }
-
+        tmpTask = New cTask("Activate and update all")
         TaskList.Add(tmpTask)
 
-        tmpTask = New cTask With {
-            .Task_Name = "Property find\replace",
-            .Image_Name = "Synchronize_16",
-            .Task_Enabled = True,
-            .asm = True,
-            .par = True,
-            .psm = True,
-            .HelpText = "Property find\replace"
-        }
-
+        tmpTask = New cTask("Property find\replace")
         TaskList.Add(tmpTask)
 
-        tmpTask = New cTask With {
-            .Task_Name = "Update physical properties",
-            .Image_Name = "skull_16",
-            .Task_Enabled = True,
-            .asm = True,
-            .par = True,
-            .psm = True,
-            .HelpText = "Update physical properties",
-            .Option_1 = True,
-            .Option_2 = True,
-            .Option_1_Name = "Show center of mass",
-            .Option_2_Name = "Hide center of mass"
-        }
-
+        tmpTask = New cTask("Update physical properties")
         TaskList.Add(tmpTask)
 
-        tmpTask = New cTask With {
-            .Task_Name = "Variable add\edit\expose",
-            .Image_Name = "Drill_16",
-            .Task_Enabled = True,
-            .asm = True,
-            .par = True,
-            .psm = True,
-            .HelpText = "Variable add\edit\expose",
-            .Configurable = True,
-            .Configuration = "example configuration text"
-        }
-
+        tmpTask = New cTask("Variable add\edit\expose")
         TaskList.Add(tmpTask)
 
     End Sub

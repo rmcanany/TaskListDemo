@@ -3,6 +3,7 @@
 Public Class TaskControl
 
     Public Task As cTask
+    Public AvailableTasks As List(Of String)
 
     Public Sub Initialize()
 
@@ -113,5 +114,94 @@ Public Class cTask
 
     Public Option_1_Name As String = ""
     Public Option_2_Name As String = ""
+
+    Public Sub New(TaskType As String)
+
+        Select Case TaskType
+
+            Case = "Title"
+                Title = True
+
+
+            Case = "Open\Save"
+                Task_Name = "Open\Save"
+                Image_Name = "Save_16"
+                Task_Enabled = True
+                asm = True
+                par = True
+                psm = True
+                dft = True
+                HelpText = "Open and saves the file"
+
+
+            Case = "Save as 2D"
+                Task_Name = "Save as"
+                Image_Name = "Update_16"
+                Task_Enabled = True
+                dft = True
+                HelpText = "Save as"
+                Combo = True
+                ComboValue = New List(Of String)(New String() {".dxf", ".dwg", ".pdf"})
+
+            Case = "Save as 3D"
+                Task_Name = "Save as"
+                Image_Name = "Update_16"
+                Task_Enabled = True
+                dft = True
+                HelpText = "Save as"
+                Combo = True
+                ComboValue = New List(Of String)(New String() {".x_t", ".stp", ".igs", ".stl", ".ifc"})
+
+            Case = "Activate and update all"
+
+                Task_Name = "Activate and update all"
+                Image_Name = "Update_16"
+                Task_Enabled = True
+                asm = True
+                HelpText = "Activate and update all"
+
+
+            Case = "Property find\replace"
+
+                Task_Name = "Property find\replace"
+                Image_Name = "Synchronize_16"
+                Task_Enabled = True
+                asm = True
+                par = True
+                psm = True
+                HelpText = "Property find\replace"
+
+
+            Case = "Update physical properties"
+
+                Task_Name = "Update physical properties"
+                Image_Name = "skull_16"
+                Task_Enabled = True
+                asm = True
+                par = True
+                psm = True
+                HelpText = "Update physical properties"
+                Option_1 = True
+            Option_2 = True
+            Option_1_Name = "Show center of mass"
+            Option_2_Name = "Hide center of mass"
+
+
+            Case = "Variable add\edit\expose"
+
+                Task_Name = "Variable add\edit\expose"
+                Image_Name = "Drill_16"
+                Task_Enabled = True
+                asm = True
+                par = True
+                psm = True
+                HelpText = "Variable add\edit\expose"
+                Configurable = True
+                Configuration = "example configuration text"
+
+        End Select
+
+    End Sub
+
 
 End Class

@@ -27,6 +27,7 @@ Partial Class TaskControlForm
         '
         'FLP
         '
+        Me.FLP.AllowDrop = True
         Me.FLP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.FLP.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FLP.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
