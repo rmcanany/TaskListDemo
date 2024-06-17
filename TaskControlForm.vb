@@ -1,4 +1,6 @@
-﻿Public Class TaskControlForm
+﻿Imports System.Runtime.InteropServices
+
+Public Class TaskControlForm
 
     Dim TaskList As List(Of cTask)
 
@@ -29,11 +31,15 @@
 
             tmpTC.Initialize()
 
-            tmpTC.Width = FLP.Width - 2
-            'AddHandler tmpTC.UserClick, AddressOf Me.tmpTC_Click
+            tmpTC.Dock = DockStyle.Top
 
-            FLP.Controls.Add(tmpTC)
-            SetupAnchors()
+            Panel3.Controls.Add(tmpTC)
+
+            'tmpTC.Width = FLP.Width - 2
+            ''AddHandler tmpTC.UserClick, AddressOf Me.tmpTC_Click
+
+            'FLP.Controls.Add(tmpTC)
+            'SetupAnchors()
 
         Next
 
@@ -63,6 +69,29 @@
         TaskList = New List(Of cTask)
 
         Dim tmpTask As New cTask
+
+        For i = 10 To 0 Step -1
+            tmpTask = New cTask
+            tmpTask.Task_Name = String.Format("Task number {0}", i)
+            tmpTask.Image_Name = "Drill_16"
+
+            tmpTask.Task_Enabled = True
+            tmpTask.asm = True
+            tmpTask.par = True
+            tmpTask.psm = True
+            tmpTask.dft = False
+
+            tmpTask.HelpText = tmpTask.Task_Name
+
+            tmpTask.Option_1 = True
+            tmpTask.Option_2 = True
+
+            tmpTask.Option_1_Name = "Option 1"
+            tmpTask.Option_2_Name = "Option 2"
+
+            TaskList.Add(tmpTask)
+        Next
+
         tmpTask.Task_Name = "Open\Save"
         tmpTask.Image_Name = "Save_16"
 
@@ -162,10 +191,45 @@
 
         TaskList.Add(tmpTask)
 
+
     End Sub
+
+    Protected Overrides Sub OnCreateControl()
+        MyBase.OnCreateControl()
+        Me.SetStyle(ControlStyles.OptimizedDoubleBuffer Or ControlStyles.CacheText, True)
+        'Me.SetStyle(ControlStyles.OptimizedDoubleBuffer Or ControlStyles.CacheText Or ControlStyles.AllPaintingInWmPaint, True)
+    End Sub
+
+    Protected Overrides ReadOnly Property CreateParams As CreateParams
+        Get
+            Dim cp As CreateParams = MyBase.CreateParams
+            cp.ExStyle = cp.ExStyle Or NativeMethods.WS_EX_COMPOSITED
+            Return cp
+        End Get
+    End Property
+
+    Public Sub BeginUpdate()
+        NativeMethods.SendMessage(Me.Handle, NativeMethods.WM_SETREDRAW, IntPtr.Zero, IntPtr.Zero)
+    End Sub
+
+    Public Sub EndUpdate()
+        NativeMethods.SendMessage(Me.Handle, NativeMethods.WM_SETREDRAW, New IntPtr(1), IntPtr.Zero)
+        Parent.Invalidate(True)
+    End Sub
+
+
 
 End Class
 
+Module NativeMethods
+    Public WM_SETREDRAW As Integer = &HB
+    Public WS_EX_COMPOSITED As Integer = &H2000000
+    <DllImport("user32.dll", CharSet:=CharSet.Auto)>
+    Function SendMessage(ByVal hWnd As IntPtr, ByVal Msg As Integer, ByVal wParam As IntPtr, ByVal lParam As IntPtr) As IntPtr
+
+    End Function
+
+End Module
 Public Class cTask
 
     Public Task_Name As String = ""

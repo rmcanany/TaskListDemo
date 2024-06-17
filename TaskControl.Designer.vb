@@ -41,7 +41,8 @@ Partial Class TaskControl
         '
         'TLP
         '
-        Me.TLP.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
+        Me.TLP.AutoSize = True
+        Me.TLP.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.TLP.ColumnCount = 8
         Me.TLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
         Me.TLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
@@ -50,7 +51,7 @@ Partial Class TaskControl
         Me.TLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
         Me.TLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
         Me.TLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32.0!))
+        Me.TLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33.0!))
         Me.TLP.Controls.Add(Me.LB_Image, 0, 0)
         Me.TLP.Controls.Add(Me.CB_Option_2, 6, 2)
         Me.TLP.Controls.Add(Me.BT_Help, 7, 0)
@@ -67,9 +68,9 @@ Partial Class TaskControl
         Me.TLP.Name = "TLP"
         Me.TLP.RowCount = 3
         Me.TLP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
-        Me.TLP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
-        Me.TLP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
-        Me.TLP.Size = New System.Drawing.Size(640, 94)
+        Me.TLP.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TLP.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TLP.Size = New System.Drawing.Size(291, 76)
         Me.TLP.TabIndex = 0
         '
         'LB_Image
@@ -79,7 +80,7 @@ Partial Class TaskControl
         Me.LB_Image.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LB_Image.Image = Global.TaskListDemo.My.Resources.Resources.Drill_16
         Me.LB_Image.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.LB_Image.Location = New System.Drawing.Point(4, 1)
+        Me.LB_Image.Location = New System.Drawing.Point(3, 0)
         Me.LB_Image.Name = "LB_Image"
         Me.LB_Image.Size = New System.Drawing.Size(24, 30)
         Me.LB_Image.TabIndex = 10
@@ -90,9 +91,9 @@ Partial Class TaskControl
         Me.CB_Option_2.AutoSize = True
         Me.CB_Option_2.BackColor = System.Drawing.Color.Transparent
         Me.CB_Option_2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CB_Option_2.Location = New System.Drawing.Point(190, 66)
+        Me.CB_Option_2.Location = New System.Drawing.Point(183, 56)
         Me.CB_Option_2.Name = "CB_Option_2"
-        Me.CB_Option_2.Size = New System.Drawing.Size(413, 24)
+        Me.CB_Option_2.Size = New System.Drawing.Size(72, 17)
         Me.CB_Option_2.TabIndex = 9
         Me.CB_Option_2.Text = "Option 2"
         Me.CB_Option_2.UseVisualStyleBackColor = False
@@ -103,9 +104,9 @@ Partial Class TaskControl
         Me.BT_Help.Dock = System.Windows.Forms.DockStyle.Fill
         Me.BT_Help.FlatAppearance.BorderSize = 0
         Me.BT_Help.Image = CType(resources.GetObject("BT_Help.Image"), System.Drawing.Image)
-        Me.BT_Help.Location = New System.Drawing.Point(610, 4)
+        Me.BT_Help.Location = New System.Drawing.Point(261, 3)
         Me.BT_Help.Name = "BT_Help"
-        Me.BT_Help.Size = New System.Drawing.Size(26, 24)
+        Me.BT_Help.Size = New System.Drawing.Size(27, 24)
         Me.BT_Help.TabIndex = 7
         Me.BT_Help.UseVisualStyleBackColor = False
         '
@@ -115,7 +116,7 @@ Partial Class TaskControl
         Me.CB_Draft.BackColor = System.Drawing.Color.Transparent
         Me.CB_Draft.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CB_Draft.FlatAppearance.BorderSize = 0
-        Me.CB_Draft.Location = New System.Drawing.Point(159, 4)
+        Me.CB_Draft.Location = New System.Drawing.Point(153, 3)
         Me.CB_Draft.Name = "CB_Draft"
         Me.CB_Draft.Size = New System.Drawing.Size(24, 24)
         Me.CB_Draft.TabIndex = 5
@@ -127,7 +128,7 @@ Partial Class TaskControl
         Me.CB_SheetMetal.BackColor = System.Drawing.Color.Transparent
         Me.CB_SheetMetal.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CB_SheetMetal.FlatAppearance.BorderSize = 0
-        Me.CB_SheetMetal.Location = New System.Drawing.Point(128, 4)
+        Me.CB_SheetMetal.Location = New System.Drawing.Point(123, 3)
         Me.CB_SheetMetal.Name = "CB_SheetMetal"
         Me.CB_SheetMetal.Size = New System.Drawing.Size(24, 24)
         Me.CB_SheetMetal.TabIndex = 4
@@ -139,7 +140,7 @@ Partial Class TaskControl
         Me.CB_Part.BackColor = System.Drawing.Color.Transparent
         Me.CB_Part.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CB_Part.FlatAppearance.BorderSize = 0
-        Me.CB_Part.Location = New System.Drawing.Point(97, 4)
+        Me.CB_Part.Location = New System.Drawing.Point(93, 3)
         Me.CB_Part.Name = "CB_Part"
         Me.CB_Part.Size = New System.Drawing.Size(24, 24)
         Me.CB_Part.TabIndex = 3
@@ -151,7 +152,7 @@ Partial Class TaskControl
         Me.CB_Assembly.BackColor = System.Drawing.Color.Transparent
         Me.CB_Assembly.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CB_Assembly.FlatAppearance.BorderSize = 0
-        Me.CB_Assembly.Location = New System.Drawing.Point(66, 4)
+        Me.CB_Assembly.Location = New System.Drawing.Point(63, 3)
         Me.CB_Assembly.Name = "CB_Assembly"
         Me.CB_Assembly.Size = New System.Drawing.Size(24, 24)
         Me.CB_Assembly.TabIndex = 2
@@ -163,7 +164,7 @@ Partial Class TaskControl
         Me.CB_Enabled.BackColor = System.Drawing.Color.Transparent
         Me.CB_Enabled.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CB_Enabled.FlatAppearance.BorderSize = 0
-        Me.CB_Enabled.Location = New System.Drawing.Point(35, 4)
+        Me.CB_Enabled.Location = New System.Drawing.Point(33, 3)
         Me.CB_Enabled.Name = "CB_Enabled"
         Me.CB_Enabled.Size = New System.Drawing.Size(24, 24)
         Me.CB_Enabled.TabIndex = 1
@@ -175,9 +176,9 @@ Partial Class TaskControl
         Me.LB_Name.BackColor = System.Drawing.Color.Transparent
         Me.LB_Name.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LB_Name.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.LB_Name.Location = New System.Drawing.Point(190, 1)
+        Me.LB_Name.Location = New System.Drawing.Point(183, 0)
         Me.LB_Name.Name = "LB_Name"
-        Me.LB_Name.Size = New System.Drawing.Size(413, 30)
+        Me.LB_Name.Size = New System.Drawing.Size(72, 30)
         Me.LB_Name.TabIndex = 6
         Me.LB_Name.Text = "Task name"
         Me.LB_Name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -187,9 +188,9 @@ Partial Class TaskControl
         Me.CB_Option_1.AutoSize = True
         Me.CB_Option_1.BackColor = System.Drawing.Color.Transparent
         Me.CB_Option_1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CB_Option_1.Location = New System.Drawing.Point(190, 35)
+        Me.CB_Option_1.Location = New System.Drawing.Point(183, 33)
         Me.CB_Option_1.Name = "CB_Option_1"
-        Me.CB_Option_1.Size = New System.Drawing.Size(413, 24)
+        Me.CB_Option_1.Size = New System.Drawing.Size(72, 17)
         Me.CB_Option_1.TabIndex = 8
         Me.CB_Option_1.Text = "Option 1"
         Me.CB_Option_1.UseVisualStyleBackColor = False
@@ -208,14 +209,18 @@ Partial Class TaskControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Controls.Add(Me.TLP)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(0)
         Me.Name = "TaskControl"
-        Me.Size = New System.Drawing.Size(640, 94)
+        Me.Size = New System.Drawing.Size(291, 76)
         Me.TLP.ResumeLayout(False)
         Me.TLP.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

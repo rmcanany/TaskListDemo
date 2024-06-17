@@ -35,16 +35,30 @@
         CB_Option_2.Text = Option_2_Name
 
         If Not Option_2 Then
-            TLP.RowStyles.Item(2).Height = 0
+            'TLP.RowStyles.Item(2).Height = 0
+            CB_Option_2.Visible = False
         End If
 
         If Not Option_1 Then
-            TLP.RowStyles.Item(1).Height = 0
+            'TLP.RowStyles.Item(1).Height = 0
+            CB_Option_1.Visible = False
         End If
 
-        Me.Height = 30 - 31 * Option_1 - 31 * Option_2
+        If Task_Name.Contains("Task number") Then
+            CB_Option_2.Visible = False
+        End If
+
+        'Me.Height = 30 - 31 * Option_1 - 31 * Option_2
 
     End Sub
 
+    Private Sub CB_Option_1_CheckedChanged(sender As Object, e As EventArgs) Handles CB_Option_1.CheckedChanged
+        'MsgBox("CheckChanged")
 
+        If CB_Option_1.Checked Then
+            CB_Option_2.Visible = True
+        Else
+            CB_Option_2.Visible = False
+        End If
+    End Sub
 End Class
