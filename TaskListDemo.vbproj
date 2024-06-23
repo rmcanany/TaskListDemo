@@ -95,10 +95,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="TaskControl.Designer.vb">
-      <DependentUpon>TaskControl.vb</DependentUpon>
+    <Compile Include="UCTaskTLP.Designer.vb">
+      <DependentUpon>UCTaskTLP.vb</DependentUpon>
     </Compile>
-    <Compile Include="TaskControl.vb">
+    <Compile Include="UCTaskTLP.vb">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
@@ -112,8 +112,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="TaskControl.resx">
-      <DependentUpon>TaskControl.vb</DependentUpon>
+    <EmbeddedResource Include="UCTaskTLP.resx">
+      <DependentUpon>UCTaskTLP.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +142,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Icons\Update_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\collapse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\collapse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\help_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\ST9 - asm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\ST9 - par.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\ST9 - psm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\ST9 - dft.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

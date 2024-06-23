@@ -1,6 +1,6 @@
 ﻿Imports System.Windows.Forms.VisualStyles
 
-Public Class TaskControl
+Public Class UCTaskTLP
 
     Public Task As cTask
     Public AvailableTasks As List(Of String)
@@ -9,11 +9,11 @@ Public Class TaskControl
 
         If Not Task.Title Then
 
-            L1.Visible = False
-            L2.Visible = False
-            L3.Visible = False
-            L4.Visible = False
-            TLP.RowStyles.Item(0).Height = 0
+            'L1.Visible = False
+            'L2.Visible = False
+            'L3.Visible = False
+            'L4.Visible = False
+            'TLP.RowStyles.Item(0).Height = 0
 
             CB_Enabled.Checked = Task.Task_Enabled
             CB_Assembly.Enabled = Task.asm
@@ -24,51 +24,51 @@ Public Class TaskControl
             LB_Name.Text = Task.Task_Name
             LB_Image.Image = ImageList1.Images.Item(Task.Image_Name)
 
-            If Not Task.Option_2 Then
-                TLP.RowStyles.Item(5).Height = 0
-            Else
-                CB_Option_2.Text = Task.Option_2_Name
-            End If
+            'If Not Task.Option_2 Then
+            '    TLP.RowStyles.Item(5).Height = 0
+            'Else
+            '    CB_Option_2.Text = Task.Option_2_Name
+            'End If
 
-            If Not Task.Option_1 Then
-                TLP.RowStyles.Item(4).Height = 0
-            Else
-                CB_Option_1.Text = Task.Option_1_Name
-            End If
+            'If Not Task.Option_1 Then
+            '    TLP.RowStyles.Item(4).Height = 0
+            'Else
+            '    CB_Option_1.Text = Task.Option_1_Name
+            'End If
 
-            If Not Task.Combo Then
-                CB_Options.Visible = False
-                TLP.RowStyles.Item(3).Height = 0
-            Else
-                For Each item In Task.ComboValue
-                    CB_Options.Items.Add(item)
-                Next
-            End If
+            'If Not Task.Combo Then
+            '    CB_Options.Visible = False
+            '    TLP.RowStyles.Item(3).Height = 0
+            'Else
+            '    For Each item In Task.ComboValue
+            '        CB_Options.Items.Add(item)
+            '    Next
+            'End If
 
             If Not Task.Configurable Then
-                BT_Configure.Visible = False
-                TB_Configuration.Visible = False
-                TLP.RowStyles.Item(2).Height = 0
-            Else
-                TB_Configuration.Text = Task.Configuration
+                TLPOptions.Visible = False
+                'TB_Configuration.Visible = False
+                'TLP.RowStyles.Item(2).Height = 0
+                'Else
+                '    TB_Configuration.Text = Task.Configuration
             End If
 
-            Me.Height = 25 - 24 * Task.Option_1 - 24 * Task.Option_2 - 24 * Task.Combo - 24 * Task.Configurable
+            ' Me.Height = 25 - 24 * Task.Option_1 - 24 * Task.Option_2 - 24 * Task.Combo - 24 * Task.Configurable
 
         Else
 
-            Me.Height = 25
-            BT_Help.Visible = False
-            LB_Name.Visible = False
-            LB_Image.Visible = False
-            BT_Configure.Visible = False
-            TB_Configuration.Visible = False
-            CB_Options.Visible = False
-            TLP.RowStyles.Item(5).Height = 0
-            TLP.RowStyles.Item(4).Height = 0
-            TLP.RowStyles.Item(3).Height = 0
-            TLP.RowStyles.Item(2).Height = 0
-            TLP.RowStyles.Item(1).Height = 0
+            'Me.Height = 25
+            'BT_Help.Visible = False
+            'LB_Name.Visible = False
+            'LB_Image.Visible = False
+            'BT_Configure.Visible = False
+            'TB_Configuration.Visible = False
+            'CB_Options.Visible = False
+            'TLP.RowStyles.Item(5).Height = 0
+            'TLP.RowStyles.Item(4).Height = 0
+            'TLP.RowStyles.Item(3).Height = 0
+            'TLP.RowStyles.Item(2).Height = 0
+            'TLP.RowStyles.Item(1).Height = 0
 
         End If
 
@@ -76,13 +76,13 @@ Public Class TaskControl
 
     Public Sub VerticalBorders(Visible As Boolean)
 
-        Lc1.Visible = Visible
-        Lc3.Visible = Visible
-        Lc5.Visible = Visible
-        Lc7.Visible = Visible
-        Lc9.Visible = Visible
-        Lc11.Visible = Visible
-        Lc13.Visible = Visible
+        'Lc1.Visible = Visible
+        'Lc3.Visible = Visible
+        'Lc5.Visible = Visible
+        'Lc7.Visible = Visible
+        'Lc9.Visible = Visible
+        'Lc11.Visible = Visible
+        'Lc13.Visible = Visible
 
     End Sub
 
@@ -182,9 +182,9 @@ Public Class cTask
                 psm = True
                 HelpText = "Update physical properties"
                 Option_1 = True
-            Option_2 = True
-            Option_1_Name = "Show center of mass"
-            Option_2_Name = "Hide center of mass"
+                Option_2 = True
+                Option_1_Name = "Show center of mass"
+                Option_2_Name = "Hide center of mass"
 
 
             Case = "Variable add\edit\expose"
